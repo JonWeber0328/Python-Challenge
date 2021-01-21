@@ -51,20 +51,31 @@ for x in profit_loss:
     change = x - prior_month
     change_list.append(int(change))
 #print(change_list)
-# first number not accurate
+
+# First number is not accurate.
+# Change first number to 0.
 change_list=[0 if x==196785 else x for x in change_list]
-print(change_list)
+#print(change_list)
 
+# Find the average change
+sum_change = sum(change_list)
+average_change = round(float(int(sum_change) / int(85)), 2)
+#print(average_change)
 
+# Find the greatest increase in profits.
+greatest_increase = max(change_list)
+#print(greatest_increase)
 
-
-
+# Find the greatest decrease in profits.
+greatest_decrease = min(change_list)
+print(greatest_decrease)
 
 # Print financial analysis
 print("Financial Analysis")
 print("--------------------------------")
 print(f"Total Months: {total_rows}")
 print(f"Total: ${total}")
+print(f"Average Change: ${average_change}")
 
 
      
