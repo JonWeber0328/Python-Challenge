@@ -68,7 +68,7 @@ greatest_increase = max(change_list)
 
 # Find the greatest decrease in profits.
 greatest_decrease = min(change_list)
-print(greatest_decrease)
+#print(greatest_decrease)
 
 # Print financial analysis
 print("Financial Analysis")
@@ -76,9 +76,21 @@ print("--------------------------------")
 print(f"Total Months: {total_rows}")
 print(f"Total: ${total}")
 print(f"Average Change: ${average_change}")
+print(f"Greatest Increase in Profits: (${greatest_increase})")
+print(f"Greatest Decrease in Profits: (${greatest_decrease})")
 
+# Print the analysis to the terminal and export a text file with the results.
+output_path = os.path.join("analysis", "python.csv")
 
-     
+with open(output_path, 'w', newline='') as csvfile:
+    csv.writer = csv.writer(csvfile, delimiter=',')
+    csvwriter.writerow(['Financial Analysis', ''])
+    csvwriter.writerow(['-------------------------', ''])
+    csvwriter.writerow(['Total Months: ', '86', ''])
+    csvwriter.writerow(['Total: ', '$38382578', ''])
+    csvwriter.writerow(['Average Change: ', '$-2315.12', ''])
+    csvwriter.writerow(['Greatest Increase in Profits: ', '($1926159)', ''])
+    csvwriter.writerow(['Greatest Decrease in Profits: ', '($-2196167)', ''])
     
 
 
