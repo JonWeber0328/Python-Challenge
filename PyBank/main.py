@@ -9,38 +9,33 @@ csvpath = os.path.join('Resources', 'budget_data.csv')
 # Make sure the file path is set up correctly(confirmed).
     
 # Open the .csv
-with open(csvpath) as csv_file:
+with open(csvpath) as csvfile:
 
     # Split the data on commas
-    budget_data=csv.reader(csv_file, delimiter=",")
+    budget_data=csv.reader(csvfile, delimiter=",")
     #print(budget_data)
 
     # Set header line
     header = next(budget_data)
     #print(f"{header}")
     
+    # Define the variables
+    total = 0
+    total_rows = 0
+    profit_loss = []
+
     # Loop through the rows
-    for row in budget_data:
-        print(row)
+    for i in budget_data:
+        #print(i)
 
         # Count the number of rows
-        #total_rows += 1
+        total_rows += 1
 
-        #date.append(str(row[0]))
-        #profit_loss.append(int(row[1]))
-        #print(date)
-        
-        # Sum up net profit/loss
-        #row_net = int(row[1])
-        #net = net + row_net
+        # Find total of profit/loss column
+        row_total = int(i[1])
+        total += row_total
 
-#total_months = len(date)
-        
-# Define the variables
-total_rows = 0
-net = 0
-date = []
-profit_loss = []
+
 
 
 
@@ -49,7 +44,7 @@ profit_loss = []
 print("Financial Analysis")
 print("--------------------------------")
 print(f"Total Months: {total_rows}")
-    
+print(f"Total: ${total}")
 
 
      
