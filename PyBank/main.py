@@ -41,7 +41,7 @@ with open(csvpath) as csvfile:
     
     #print(profit_loss)
 
-# Use profit/loss list to find change from month to month.
+# Use profit/loss column to find change from month to month.
 # Define the variables
 change_list = []
 
@@ -49,9 +49,11 @@ change_list = []
 for x in profit_loss:
     prior_month = profit_loss[profit_loss.index(x) -1]
     change = x - prior_month
-    print(change)
-
-    
+    change_list.append(int(change))
+#print(change_list)
+# first number not accurate
+change_list=[0 if x==196785 else x for x in change_list]
+print(change_list)
 
 
 
