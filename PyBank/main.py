@@ -80,10 +80,12 @@ print(f"Greatest Increase in Profits: (${greatest_increase})")
 print(f"Greatest Decrease in Profits: (${greatest_decrease})")
 
 # Print the analysis to the terminal and export a text file with the results.
+# Found in UofM Data Bootcamp lesson plan.
 output_path = os.path.join("analysis", "python.csv")
 
 with open(output_path, 'w', newline='') as csvfile:
-    csv.writer = csv.writer(csvfile, delimiter=',')
+    csvwriter = csv.writer(csvfile, delimiter=',')
+
     csvwriter.writerow(['Financial Analysis', ''])
     csvwriter.writerow(['-------------------------', ''])
     csvwriter.writerow(['Total Months: ', '86', ''])
