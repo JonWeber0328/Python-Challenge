@@ -24,7 +24,7 @@ with open(csvpath) as csvfile:
     total_rows = 0
     profit_loss = []
 
-    # Loop through the rows
+    # Loop through the rows to find total months and total profit.
     for i in budget_data:
         #print(i)
 
@@ -35,12 +35,30 @@ with open(csvpath) as csvfile:
         row_total = int(i[1])
         total += row_total
 
+        # Find average change in profit/loss column
+        # Look at profit/loss column and collect the data in a list.
+        profit_loss.append(int(i[1]))
+    
+    #print(profit_loss)
+
+# Use profit/loss list to find change from month to month.
+# Define the variables
+change_list = []
+
+# Create new column for monthly change.
+for x in profit_loss:
+    prior_month = profit_loss[profit_loss.index(x) -1]
+    change = x - prior_month
+    print(change)
+
+    
 
 
 
 
 
-# Print header of financial analysis
+
+# Print financial analysis
 print("Financial Analysis")
 print("--------------------------------")
 print(f"Total Months: {total_rows}")
