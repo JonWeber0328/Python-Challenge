@@ -22,6 +22,7 @@ with open(csvpath) as csvfile:
     # Define the variables
     total = 0
     total_rows = 0
+    date = []
     profit_loss = []
 
     # Loop through the rows to find total months and total profit.
@@ -35,10 +36,13 @@ with open(csvpath) as csvfile:
         row_total = int(i[1])
         total += row_total
 
+        # Create new list for the date column.
+        date.append(str(i[0]))
+
         # Find average change in profit/loss column
         # Look at profit/loss column and collect the data in a list.
         profit_loss.append(int(i[1]))
-    
+    print(date)
     #print(profit_loss)
 
 # Use profit/loss column to find change from month to month.
@@ -54,6 +58,7 @@ for x in profit_loss:
 
 # First number is not accurate.
 # Change first number to 0.
+# Retrieved January 22, 2021, from https://stackoverflow.com/questions/2582138/finding-and-replacing-elements-in-a-list
 change_list=[0 if x==196785 else x for x in change_list]
 #print(change_list)
 
