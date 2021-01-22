@@ -42,7 +42,7 @@ with open(csvpath) as csvfile:
         # Find average change in profit/loss column
         # Look at profit/loss column and collect the data in a list.
         profit_loss.append(int(i[1]))
-    print(date)
+    #print(date)
     #print(profit_loss)
 
 # Use profit/loss column to find change from month to month.
@@ -75,14 +75,24 @@ greatest_increase = max(change_list)
 greatest_decrease = min(change_list)
 #print(greatest_decrease)
 
+# Add in date for greatest increase and decrease.
+increase_row = change_list.index(greatest_increase)
+#print(increase_row)
+greatest_month = date[increase_row]
+#print(greatest_month)
+decrease_row = change_list.index(greatest_decrease)
+#print(decrease_row)
+greatest_month2 = date[decrease_row]
+#print(greatest_month2)
+
 # Print financial analysis
 print("Financial Analysis")
 print("--------------------------------")
 print(f"Total Months: {total_rows}")
 print(f"Total: ${total}")
 print(f"Average Change: ${average_change}")
-print(f"Greatest Increase in Profits: (${greatest_increase})")
-print(f"Greatest Decrease in Profits: (${greatest_decrease})")
+print(f"Greatest Increase in Profits: {greatest_month} (${greatest_increase})")
+print(f"Greatest Decrease in Profits: {greatest_month2} (${greatest_decrease})")
 
 # Print the analysis to the terminal and export a text file with the results.
 # Found in UofM Data Bootcamp lesson plan.
@@ -93,11 +103,11 @@ with open(output_path, 'w', newline='') as csvfile:
 
     csvwriter.writerow(['Financial Analysis', ''])
     csvwriter.writerow(['-------------------------', ''])
-    csvwriter.writerow(['Total Months: ', '86', ''])
-    csvwriter.writerow(['Total: ', '$38382578', ''])
-    csvwriter.writerow(['Average Change: ', '$-2315.12', ''])
-    csvwriter.writerow(['Greatest Increase in Profits: ', '($1926159)', ''])
-    csvwriter.writerow(['Greatest Decrease in Profits: ', '($-2196167)', ''])
+    csvwriter.writerow(['Total Months:', '86', ''])
+    csvwriter.writerow(['Total:', '$38382578', ''])
+    csvwriter.writerow(['Average Change:', '$-2315.12', ''])
+    csvwriter.writerow(['Greatest Increase in Profits:', 'Feb-12', '($1926159)', ''])
+    csvwriter.writerow(['Greatest Decrease in Profits:', 'Sep-13', '($-2196167)', ''])
     
 
 
