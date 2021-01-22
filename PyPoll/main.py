@@ -25,7 +25,10 @@ with open(csvpath, 'r') as csvfile:
     # Define the variables
     total_votes = 0
     candidates = []
-    
+    Khan_votes = 0
+    Correy_votes = 0
+    Li_votes = 0
+    OTooley_votes = 0
     
 
     # Loop through the rows to find the total number of votes.
@@ -37,14 +40,31 @@ with open(csvpath, 'r') as csvfile:
 
         # get list of all candidate names
         candidates.append(str(i[2]))
-    
+
+# Calculate how many votes each candidate received.
+for x in candidates:
+    if x == "Khan":
+        Khan_votes += 1
+    elif x == "Correy":
+        Correy_votes += 1
+    elif x == "Li":
+        Li_votes += 1
+    elif x == "O'Tooley":
+        OTooley_votes += 1
+print(f"{Khan_votes}")
+print(f"{Correy_votes}")
+print(f"{Li_votes}")
+print(f"{OTooley_votes}")
+
+
 # Print a complete list of candidates who received votes
 # Function found on geeksforgeeks.org/python-get-unique-values-list/
 def unique(candidates):
     x = np.array(candidates)
-    #print(np.unique(x))
-#print("The complete list of candidates who received votes:")
+    print(np.unique(x))
+print("The complete list of candidates who received votes:")
 unique(candidates)
+print("----------------------------")
 
 
     
@@ -58,7 +78,7 @@ print("----------------------------")
 print(f"Total Votes: {total_votes}")    
 print("----------------------------")
 print(f"Khan: ")
-print(f"Corey: ")
+print(f"Correy: ")
 print(f"Li: ")
 print(f"O'Tooley: ")
 print("----------------------------")
