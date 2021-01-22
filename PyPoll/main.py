@@ -27,7 +27,19 @@ with open(csvpath) as csvfile:
 
         # Count the number of rows
         total_votes += 1
-    print(total_votes)    
+    #print(total_votes)
 
+# Print analysis 
+print("Election Results")
+print("----------------------------")
+print(f"Total Votes: {total_votes}")    
+print("----------------------------")
+print(f"Khan: ")
+print(f"Corey: ")
+print(f"Li: ")
+print(f"O'Tooley: ")
+print("----------------------------")
+print(f"Winner: ")
+print("----------------------------")
 
 
