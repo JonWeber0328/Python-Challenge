@@ -76,14 +76,8 @@ OTooley_percent = round(float(int(OTooley_votes) / int(total_votes))*100, 4)
 #print(f"{OTooley_percent}")
 
 
-
-
-    
-
-
-
-
-# Print analysis 
+# Print analysis
+print("----------------------------")
 print("Election Results")
 print("----------------------------")
 print(f"Total Votes: {total_votes}")    
@@ -93,7 +87,24 @@ print(f"Correy: {Correy_percent}% ({Correy_votes})")
 print(f"Li: {Li_percent}% ({Li_votes})")
 print(f"O'Tooley: {OTooley_percent}% ({OTooley_votes})")
 print("----------------------------")
-print(f"Winner: ")
+
+# Find the winner by popular vote.
+
+vote_list = (Khan_votes, Correy_votes, Li_votes, OTooley_votes)
+winner = max(vote_list)
+
+if winner == Khan_votes:
+    print("Winner: Khan")
+    
+elif winner == Correy_votes:
+    print("Winner: Correy")
+    
+elif winner == Li_votes:
+    print("Winner: Li")
+    
+elif winner == OTooley_votes:
+    print("Winner: O'Tooley")
+    
 print("----------------------------")
 
 
