@@ -107,4 +107,24 @@ elif winner == OTooley_votes:
     
 print("----------------------------")
 
+# Export a .csv text file with the results.
+output_path = os.path.join("analysis", "results.csv")
 
+with open(output_path, 'w', newline='') as csvfile:
+    csvwriter = csv.writer(csvfile, delimiter=',')
+
+    csvwriter.writerow(['The complete list of candidates who received votes:', ''])
+    csvwriter.writerow(['[Correy', 'Khan', 'Li', 'OTooley]', ''])
+    csvwriter.writerow(['----------------------------', ''])
+    csvwriter.writerow(['----------------------------', ''])
+    csvwriter.writerow(['Election Results', ''])
+    csvwriter.writerow(['----------------------------', ''])
+    csvwriter.writerow(['Total Votes:', '3521001', ''])
+    csvwriter.writerow(['----------------------------', ''])
+    csvwriter.writerow(['Khan:', '63.0%', '(2218231)', ''])
+    csvwriter.writerow(['Correy:', '20.0%', '(704200)', ''])
+    csvwriter.writerow(['Li:', '14.0%', '(492940)', ''])
+    csvwriter.writerow(['OTooley:', '3.0%', '(105630)', ''])
+    csvwriter.writerow(['----------------------------', ''])
+    csvwriter.writerow(['Winner:', 'Khan', ''])
+    csvwriter.writerow(['----------------------------', ''])    
