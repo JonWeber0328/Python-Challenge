@@ -41,6 +41,15 @@ with open(csvpath, 'r') as csvfile:
         # get list of all candidate names
         candidates.append(str(i[2]))
 
+# Print a complete list of candidates who received votes
+# Function found on geeksforgeeks.org/python-get-unique-values-list/
+def unique(candidates):
+    x = np.array(candidates)
+    print(np.unique(x))
+print("The complete list of candidates who received votes:")
+unique(candidates)
+print("----------------------------")
+
 # Calculate how many votes each candidate received.
 for x in candidates:
     if x == "Khan":
@@ -51,20 +60,22 @@ for x in candidates:
         Li_votes += 1
     elif x == "O'Tooley":
         OTooley_votes += 1
-print(f"{Khan_votes}")
-print(f"{Correy_votes}")
-print(f"{Li_votes}")
-print(f"{OTooley_votes}")
+#print(f"{Khan_votes}")
+#print(f"{Correy_votes}")
+#print(f"{Li_votes}")
+#print(f"{OTooley_votes}")
+
+# Calculate the percentage of votes each candidate won.
+Khan_percent = round(float(int(Khan_votes) / int(total_votes))*100, 4)
+#print(f"{Khan_percent}")
+Correy_percent = round(float(int(Correy_votes) / int(total_votes))*100, 4)
+#print(f"{Correy_percent}")
+Li_percent = round(float(int(Li_votes) / int(total_votes))*100, 4)
+#print(f"{Li_percent}")
+OTooley_percent = round(float(int(OTooley_votes) / int(total_votes))*100, 4)
+#print(f"{OTooley_percent}")
 
 
-# Print a complete list of candidates who received votes
-# Function found on geeksforgeeks.org/python-get-unique-values-list/
-def unique(candidates):
-    x = np.array(candidates)
-    print(np.unique(x))
-print("The complete list of candidates who received votes:")
-unique(candidates)
-print("----------------------------")
 
 
     
@@ -77,10 +88,10 @@ print("Election Results")
 print("----------------------------")
 print(f"Total Votes: {total_votes}")    
 print("----------------------------")
-print(f"Khan: ")
-print(f"Correy: ")
-print(f"Li: ")
-print(f"O'Tooley: ")
+print(f"Khan: {Khan_percent}% ({Khan_votes})")
+print(f"Correy: {Correy_percent}% ({Correy_votes})")
+print(f"Li: {Li_percent}% ({Li_votes})")
+print(f"O'Tooley: {OTooley_percent}% ({OTooley_votes})")
 print("----------------------------")
 print(f"Winner: ")
 print("----------------------------")
